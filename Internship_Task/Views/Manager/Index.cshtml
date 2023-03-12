@@ -1,0 +1,28 @@
+﻿@using Internship_Task.Entities;
+@model Internship_Task.ViewModels.Manager.IndexVM;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Manager";
+}
+
+<a href="/Manager/Create">New Manager</a>
+<hr />
+
+@foreach (Manager item in Model.managers)
+{
+    <div>
+        <h2></h2>
+        <h5>@item.FullName</h5>
+        <h6>@item.Email</h6>
+        <h6>@item.PhoneNumber</h6>
+        <h6>@item.Address</h6>
+        <h6>@item.MonthlySalary</h6>
+        <h6>@item.Department</h6>
+        <h6>@item.DateOfStart</h6>
+        <a href="/Manager/Update?id=@item.Id">Update Manager</a>
+        <a href="/Manager/Delete?id=@item.Id">Delete Manager</a>
+
+    </div>
+    <hr />
+}
+

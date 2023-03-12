@@ -1,0 +1,67 @@
+﻿@model Internship_Task.ViewModels.Manager.CreateVM
+@{
+    ViewData["title"] = "Create new manager";
+    Layout = "_Layout";
+}
+
+
+<h1>Create Manager</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.FullName)
+                <br />
+                @Html.TextBoxFor(m=>m.FullName)
+                @Html.ValidationMessageFor(m=>m.FullName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Email)
+                <br />
+                @Html.TextBoxFor(m=>m.Email)
+                @Html.ValidationMessageFor(m=>m.Email)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.PhoneNumber)
+                <br />
+                @Html.TextBoxFor(m=>m.PhoneNumber)
+                @Html.ValidationMessageFor(m=>m.PhoneNumber)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Address)
+                <br />
+                @Html.TextBoxFor(m=>m.Address)
+                @Html.ValidationMessageFor(m=>m.Address)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Department)
+                <br />
+                @Html.TextBoxFor(m=>m.Department)
+                @Html.ValidationMessageFor(m=>m.Department)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.MonthlySalary)
+                <br />
+                @Html.TextBoxFor(m=>m.MonthlySalary)
+                @Html.ValidationMessageFor(m=>m.MonthlySalary)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.DateOfStart)
+                <br />
+                @Html.TextBoxFor(m=>m.DateOfStart)
+                @Html.ValidationMessageFor(m=>m.DateOfStart)
+            </div>
+
+
+            @Html.ValidationMessage("authError", new {@style = "color:#b02a37"})
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

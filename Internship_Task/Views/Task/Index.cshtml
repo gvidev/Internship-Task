@@ -1,0 +1,23 @@
+﻿@using Internship_Task.Entities;
+@model Internship_Task.ViewModels.Task.IndexVM;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Employees";
+}
+
+<a href="/Task/Create">New Task</a>
+
+<hr />
+@foreach (Internship_Task.Entities.Task item in Model.Items)
+{
+        <div>
+            <h5>@item.Title</h5>
+            <h6>@item.Description</h6>
+            <h6>@item.AssigneeId</h6>
+            <h6>@item.DueDate</h6>
+            <a href="/Task/Update?id=@item.Id">Update Task</a>
+        <a href="/Task/Delete?id=@item.Id">Delete Task</a>
+        </div>
+        <hr/>
+}
+

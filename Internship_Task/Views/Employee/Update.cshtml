@@ -1,0 +1,60 @@
+﻿@model Internship_Task.ViewModels.Employee.EditVM
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+
+<h1>Edit Employee</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="Update" method="post">
+            @Html.HiddenFor(m=>m.Id);
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                @Html.LabelFor(m=>m.FullName)
+                <br />
+                @Html.TextBoxFor(m=>m.FullName)
+                @Html.ValidationMessageFor(m=>m.FullName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Email)
+                <br />
+                @Html.TextBoxFor(m=>m.Email)
+                @Html.ValidationMessageFor(m=>m.Email)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.PhoneNumber)
+                <br />
+                @Html.TextBoxFor(m=>m.PhoneNumber)
+                @Html.ValidationMessageFor(m=>m.PhoneNumber)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.DateOfBirth)
+                <br />
+                @Html.TextBoxFor(m=>m.DateOfBirth)
+                @Html.ValidationMessageFor(m=>m.DateOfBirth)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.MonthlySalary)
+                <br />
+                @Html.TextBoxFor(m=>m.MonthlySalary)
+                @Html.ValidationMessageFor(m=>m.MonthlySalary)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.ManagerId)
+                <br />
+                @Html.TextBoxFor(m=>m.ManagerId)
+                @Html.ValidationMessageFor(m=>m.ManagerId)
+            </div>
+            
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

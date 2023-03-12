@@ -1,0 +1,49 @@
+﻿@model Internship_Task.ViewModels.Task.CreateVM
+@{
+    ViewData["title"] = "Create new task";
+    Layout = "_Layout";
+}
+
+
+<h1>Create Task</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Title)
+                <br />
+                @Html.TextBoxFor(m=>m.Title)
+                @Html.ValidationMessageFor(m=>m.Title)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Description)
+                <br />
+                @Html.TextBoxFor(m=>m.Description)
+                @Html.ValidationMessageFor(m=>m.Description)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.AssigneeId)
+                <br />
+                @Html.TextBoxFor(m=>m.AssigneeId)
+                @Html.ValidationMessageFor(m=>m.AssigneeId)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.DueDate)
+                <br />
+                @Html.TextBoxFor(m=>m.DueDate)
+                @Html.ValidationMessageFor(m=>m.DueDate)
+            </div>
+           
+
+            @Html.ValidationMessage("authError", new {@style = "color:#b02a37"})
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Internship_Task.ViewModels.Task.EditVM
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+
+<h1>Edit Task</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="Update" method="post">
+            @Html.HiddenFor(m=>m.Id);
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Title)
+                <br />
+                @Html.TextBoxFor(m=>m.Title)
+                @Html.ValidationMessageFor(m=>m.Title)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.Description)
+                <br />
+                @Html.TextBoxFor(m=>m.Description)
+                @Html.ValidationMessageFor(m=>m.Description)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.AssigneeId)
+                <br />
+                @Html.TextBoxFor(m=>m.AssigneeId)
+                @Html.ValidationMessageFor(m=>m.AssigneeId)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m=>m.DueDate)
+                <br />
+                @Html.TextBoxFor(m=>m.DueDate)
+                @Html.ValidationMessageFor(m=>m.DueDate)
+            </div>
+            
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

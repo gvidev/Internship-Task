@@ -1,0 +1,22 @@
+﻿@using Internship_Task.Entities;
+@model Internship_Task.ViewModels.Top_5_Employees.IndexVM;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Top 5 Employees";
+}
+
+<h1> Top 5 Employees - ascending order of finished task for the last month</h1>
+<hr />
+
+
+
+@foreach (Employee item in Model.employees)
+{
+    
+    <div>
+        <h5>@item.FullName</h5>
+        <h6>@item.Email</h6>
+        <h6>@item.PhoneNumber</h6>
+    </div>
+    <hr />
+}
